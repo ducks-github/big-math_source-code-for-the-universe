@@ -71,6 +71,38 @@ python3 test_gur.py
 * Extend the framework to other constants (e.g. dimensionless gravity \(\kappa\)) or additional topological arguments.
 * Develop a narrative bridging standard physics to the GUR model, clearly stating which assumptions are speculative.
 
+## Appendix A: Dimensional Analysis & Unit Normalization
+
+To maintain mathematical consistency between the Grand Unified Resonance (GUR) identities and standard physical observations, this model utilizes Natural Units where \(\hbar = c = k_B = 1\). In this framework, all physical quantities are expressed as powers of energy or as dimensionless ratios.
+
+### 1. The Dimensionless Nature of Charge (e)
+
+In Identity 4, the elementary charge \(e\) is defined via the Fine Structure Constant (\(\alpha\)).
+
+**Standard Physics:** \(\alpha = \frac{e^2}{4\pi\epsilon_0 \hbar c}\).
+
+**GUR Projection:** By setting \(4\pi\epsilon_0 = 1\) (Gaussian units), the identity \(e = \sqrt{\frac{2\pi \cdot \Phi}{\alpha}}\) maps the "charge" as the square root of the coupling constant modulated by the Symmetry Operator (\(\Phi\)).
+
+### 2. Mass-Ratio Normalization (\(\mu\))
+
+The Proton-to-Electron mass ratio (\(\mu \approx 1836.15\)) is already a dimensionless number in standard physics.
+
+The GUR identity proves that this ratio is a result of 3D Space-Filling Tiling (the constant 12) acting upon the Möbius twist of the vacuum.
+
+The term \(\left(1 - \frac{\Phi}{\sqrt{2} \pi}\right)\) represents the geometric impedance required to close the 5D topological fold.
+
+### 3. Gravity as the 18th Harmonic (\(\kappa\))
+
+Identity 5 treats the Gravitational Coupling Constant (\(\kappa\)) as a dimensionless ratio:
+
+\[
+\kappa = \frac{\hbar \cdot c}{G \cdot m_p^2}
+\]
+
+This removes the need for the "G" units (\(m^3 kg^{-1} s^{-2}\)) by comparing the gravitational force between two protons to the quantum scale of the vacuum.
+
+The mapping of \(12 \cdot \alpha^{18}\) suggests that gravity is not a "force" in the 3D projection, but a residual leakage across the 18 degrees of freedom in the higher-dimensional manifold.
+
 ## License
 
 This project is released under the terms of the GNU General Public License

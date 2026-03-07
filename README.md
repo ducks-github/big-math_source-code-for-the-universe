@@ -49,6 +49,7 @@ The proof is *hybrid analytical & numerical*:
 * `gur_test.py` contains reusable functions for the main formulas and prints predicted values with error percentages.
 * `circle_square_proof.py` implements a geometric "squaring the circle" proof, demonstrating how the mass ratio emerges from projecting circular rotations into square tilings.
 * `diagonal_resonance_proof.py` explores the role of square diagonals (\(\sqrt{2}\)) in constraining the mass ratios and neutron gap.
+* `existence_proof.py` shows how geometric dissonance in the circle-square projection creates the neutron gap, proving physical matter's existence.
 * `test_gur.py` is a unit test suite validating the numerical behaviour and documenting the observed discrepancies (35.94 % for µ, 1.06 % for δ).  It can be automated in CI.
 
 ### 3.2. Example usage
@@ -62,6 +63,9 @@ python3 circle_square_proof.py
 
 python3 diagonal_resonance_proof.py
 # shows how square diagonals constrain mass ratios
+
+python3 existence_proof.py
+# proves physical matter emerges from geometric dissonance
 
 python3 test_gur.py
 # runs the unit tests checking error percentages

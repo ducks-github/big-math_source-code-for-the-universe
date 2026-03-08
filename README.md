@@ -24,7 +24,12 @@ where:
 Existence is the resonant frequency emerging from the geometric tension between the **Continuous Natural Field** (represented by the circle) and the **Discrete Material Projection** (represented by the inscribed square).  
 Physical constants are not arbitrary values; they are the "tuning points" required to resolve the irrational nature of the Möbius twist (\(\alpha\)) into the rational symmetry of 3D space (\(12\)). Matter exists only where the "Circle" and the "Square" find a common harmonic.
 
-Axiomatic assumption: a *Unitary Law of Resonance* with constant \(K=1\), asserting that stable matter arises at rational musical intervals.
+**Proposed Integral Identity:**  
+\[
+\int \left( \psi(\pi) \, dt \right) + \frac{e^{\pi i} \cdot \Phi}{\sqrt{2}} \, \bigg/ \, \frac{9}{8} = \left| e^{i\pi} + 1 \right|
+\]
+
+This identity links the vacuum stiffness integral with Euler's identity, modulated by the golden ratio and Pythagorean ratio.
 
 ## 2. Assumptions & Constants
 
@@ -53,7 +58,7 @@ The proof is *hybrid analytical & numerical*:
 * `gur_test.py` contains reusable functions for the main formulas and prints predicted values with error percentages.
 * `circle_square_proof.py` implements a geometric "squaring the circle" proof, demonstrating how the mass ratio emerges from projecting circular rotations into square tilings.
 * `diagonal_resonance_proof.py` explores the role of square diagonals (\(\sqrt{2}\)) in constraining the mass ratios and neutron gap.
-* `existence_check.py` demonstrates the Discrete-Natural Duality Theorem, showing how the neutron gap emerges from the "play" between continuous circles and discrete squares.
+* `integral_identity.py` explores the proposed integral identity linking vacuum stiffness, Euler's identity, and musical ratios.
 * `test_gur.py` is a unit test suite validating the numerical behaviour and documenting the observed discrepancies (35.94 % for µ, 1.06 % for δ).  It can be automated in CI.
 
 ### 3.2. Example usage
@@ -68,8 +73,8 @@ python3 circle_square_proof.py
 python3 diagonal_resonance_proof.py
 # shows how square diagonals constrain mass ratios
 
-python3 existence_check.py
-# proves physical matter emerges from geometric dissonance
+python3 integral_identity.py
+# evaluates the integral identity numerically
 
 python3 test_gur.py
 # runs the unit tests checking error percentages

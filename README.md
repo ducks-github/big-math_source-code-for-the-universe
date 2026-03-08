@@ -59,6 +59,7 @@ The proof is *hybrid analytical & numerical*:
 * `circle_square_proof.py` implements a geometric "squaring the circle" proof, demonstrating how the mass ratio emerges from projecting circular rotations into square tilings.
 * `diagonal_resonance_proof.py` explores the role of square diagonals (\(\sqrt{2}\)) in constraining the mass ratios and neutron gap.
 * `validate_unitary_identities.py` validates the tuning equation and unitary identity, confirming the system resolves to absolute unity (K=1).
+* `vitruvian_echo.py` visualizes the GUR model as an animated evolution: the continuous wave (ψ) and discrete agents (Aᵢ) interact through the golden ratio, Euler's gift, and 9/8 tuning to generate the "Vitruvian Echo" — the play of circle and square in the cosmos.
 * `test_gur.py` is a unit test suite validating the numerical behaviour and documenting the observed discrepancies (35.94 % for µ, 1.06 % for δ).  It can be automated in CI.
 
 ### 3.2. Example usage
@@ -75,6 +76,9 @@ python3 diagonal_resonance_proof.py
 
 python3 validate_unitary_identities.py
 # validates tuning and unitary identities
+
+python3 vitruvian_echo.py
+# animated visualization of the circle-square hybrid evolution
 
 python3 test_gur.py
 # runs the unit tests checking error percentages

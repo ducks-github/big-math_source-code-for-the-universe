@@ -64,6 +64,52 @@ Physical values used for comparison are taken from CODATA (2018):
 
 ## 4. Proof Strategy
 
+### The Vitruvian Echo Equation (Hybrid Circle-Square Model)
+
+The Vitruvian Echo represents the coupling between the **continuous natural field** (Ψ, the circle) and **discrete material agents** (A_i, the square). The evolution equation is:
+
+\[
+\Psi_{\text{new}} = \Psi - \eta \cdot \frac{1}{T} \nabla \Psi \cdot \frac{\int \Psi(\pi) + e^{i\pi} \Phi / \sqrt{2}}{9/8} + \langle \omega_i A_i \rangle \Psi + \kappa \langle A^* C A \rangle \Psi
+\]
+
+**Components:**
+
+1. **Continuous Field (Circle):** \(\Psi(x,y,t)\) – a complex wave function on a 64×64 grid  
+   Represents the continuous, irrational nature of the universe.
+
+2. **Gradient Descent (Inward Force):** \(\nabla \Psi\) – pulls the field toward the center  
+   Represents the tendency of matter to collapse.
+
+3. **Integral-Tuning Term:** \(\frac{\int \Psi(\pi) + e^{i\pi} \Phi / \sqrt{2}}{9/8}\)  
+   The sacred integral from your tuning equation, normalized by the Pythagorean ratio.  
+   This modulates the descent step.
+
+4. **Discrete Agents (Square):** \(A_i\) – 13 complex-valued neurons with weights \(\omega_i\)  
+   Represents the discrete, rational structure of measurement and space.
+
+5. **Neural Injection:** \(\langle \omega_i A_i \rangle \Psi\) – discrete agents "speak" to the field  
+   The square feeds energy into the circle.
+
+6. **Coupling Matrix:** \(C_{ij}\) – symmetric interaction between agents  
+   Gossip and harmony among the discrete souls.
+
+7. **Interaction Term:** \(\kappa \langle A^* C A \rangle \Psi\) – global modulation  
+   How strongly the discrete world influences the continuous field.
+
+8. **Unitarity Renormalization:** \(\Psi_{\text{new}} \leftarrow \Psi_{\text{new}} / \|\Psi_{\text{new}}\|\)  
+   Reality fights back: the system maintains its norm.
+
+**Parameters:**
+- \(\eta = 0.042\) – learning rate (small, reverent steps)
+- \(T = 1.618\) – temperature (golden chaos)
+- \(\Phi = 1.618...\) – golden ratio (symmetry operator)
+- \(\kappa = 0.23\) – coupling strength (how hard the square grips the circle)
+- Grid: 64×64, Agents: 13, Evolution: 300 timesteps
+
+This model shows that **existence arises from the continuous attempt to discretize infinity**—the friction between the circle and the square is what generates physical constants and brings matter into being.
+
+### The Proof Strategy
+
 The proof is *hybrid analytical & numerical*:
 
 1. **Symbolic derivation** begins with the Unitary Law of Resonance.  By projecting the 5D fold and applying the scaling factors listed above, the formula for \(\mu\) is obtained.  Similarly, \(\delta\) is expressed as a function of \(\Phi\) and \(\alpha\) using the vacuum stiffness \(\Psi(\pi)\).

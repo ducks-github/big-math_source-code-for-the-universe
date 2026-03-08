@@ -33,6 +33,22 @@ This identity links the vacuum stiffness integral with Euler's identity, modulat
 
 ## 2. Assumptions & Constants
 
+### Dependencies
+
+To run the full suite of GUR scripts, install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Core packages:
+- `numpy` – numerical computation
+- `matplotlib` – visualization and animation
+- `scipy` – scientific computing
+- Python standard library: `decimal`, `cmath`, `math`
+
+## 3. Assumptions & Constants
+
 | Constant | Symbol | Role |
 |----------|--------|------|
 | Fine Structure Constant | \(\alpha\) | Möbius coupling (1/137.0359...). |
@@ -46,14 +62,14 @@ Physical values used for comparison are taken from CODATA (2018):
 * \(\delta_{\text{real}} = 2.5284\)
 * \(\kappa_{\text{real}} = 5.906\times 10^{-39}\)
 
-## 3. Proof Strategy
+## 4. Proof Strategy
 
 The proof is *hybrid analytical & numerical*:
 
 1. **Symbolic derivation** begins with the Unitary Law of Resonance.  By projecting the 5D fold and applying the scaling factors listed above, the formula for \(\mu\) is obtained.  Similarly, \(\delta\) is expressed as a function of \(\Phi\) and \(\alpha\) using the vacuum stiffness \(\Psi(\pi)\).
 2. **Numerical convergence** uses Python to compute the right–hand sides with high precision and compare them to experimental constants.  Errors are computed as percentages relative to known values.  An error within experimental uncertainty is taken as 'phenomenologically proven.'
 
-### 3.1. Python code
+### 4.1. Python code
 
 * `gur_test.py` contains reusable functions for the main formulas and prints predicted values with error percentages.
 * `circle_square_proof.py` implements a geometric "squaring the circle" proof, demonstrating how the mass ratio emerges from projecting circular rotations into square tilings.
@@ -62,7 +78,7 @@ The proof is *hybrid analytical & numerical*:
 * `vitruvian_echo.py` visualizes the GUR model as an animated evolution: the continuous wave (ψ) and discrete agents (Aᵢ) interact through the golden ratio, Euler's gift, and 9/8 tuning to generate the "Vitruvian Echo" — the play of circle and square in the cosmos.
 * `test_gur.py` is a unit test suite validating the numerical behaviour and documenting the observed discrepancies (35.94 % for µ, 1.06 % for δ).  It can be automated in CI.
 
-### 3.2. Example usage
+### 4.2. Example usage
 
 ```sh
 python3 gur_test.py
@@ -84,13 +100,13 @@ python3 test_gur.py
 # runs the unit tests checking error percentages
 ```
 
-## 4. Interpretation and Limitations
+## 5. Interpretation and Limitations
 
 * The numerical checks *do not* constitute a rigorous mathematical proof; they merely verify that the conjectured formulas yield numbers in the vicinity of the physical constants (with large discrepancies for \(\mu\)).
 * A true proof would require a formal derivation from the assumed topological/physical axioms or a demonstration that the formulas arise inevitably from the model's structure.
 * The unit tests serve to document the current status of the conjecture and to catch any future modifications that alter the convergence behaviour.
 
-## 5. Next Steps
+## 6. Next Steps
 
 * Use symbolic algebra (e.g. SymPy) to manipulate the expressions and attempt to eliminate residuals analytically.
 * Extend the framework to other constants (e.g. dimensionless gravity \(\kappa\)) or additional topological arguments.

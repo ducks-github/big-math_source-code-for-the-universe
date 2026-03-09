@@ -24,13 +24,18 @@ def psi_pi(alpha: Decimal = alpha_real) -> Decimal:
 
 
 def mu_from_gur(alpha: Decimal = alpha_real) -> Decimal:
-    """GUR formula for proton-to-electron mass ratio"""
+    """GUR formula for proton-to-electron mass ratio (original base form)."""
     return (
         Decimal(12)
         * (Decimal(1) / alpha)
         * (Decimal(9) / Decimal(8))
         * (1 - (phi / (sq2 * pi_dec)))
     )
+
+
+def mu_fixed(alpha: Decimal = alpha_real) -> Decimal:
+    """Mass ratio using fixed chromatic constant 11.91."""
+    return Decimal("11.91") * (Decimal(1) / alpha) * (Decimal(9) / Decimal(8))
 
 
 def delta_from_gur(alpha: Decimal = alpha_real) -> Decimal:
@@ -72,6 +77,25 @@ class TestGURIdentities(unittest.TestCase):
         self.assertTrue(
             abs(error_pct - Decimal("1.0637")) < Decimal("1e-4"),
             f"unexpected delta error {error_pct}%",
+        )
+
+    def test_mu_fixed(self):
+        """Fixed-constant version should be essentially exact."""
+        mu_calc = mu_fixed()
+        error_pct = abs((mu_calc - mu_real) / mu_real) * 100
+        self.assertTrue(
+            error_pct < Decimal("0.005"),  # allow ~0.0023% error
+            f"fixed mu error {error_pct}%",
+        )
+
+    def test_mu_leap_avg(self):
+        """Averaged leap-cycle value should be within ~0.1% of real."""
+        avg_chromatic = (Decimal(12) * 11 + Decimal(11)) / Decimal(12)
+        mu_avg = avg_chromatic * (Decimal(1) / alpha_real) * (Decimal(9) / Decimal(8))
+        error_pct = abs((mu_avg - mu_real) / mu_real) * 100
+        self.assertTrue(
+            error_pct < Decimal("0.1"),
+            f"leap-average mu error {error_pct}%",
         )
 
 

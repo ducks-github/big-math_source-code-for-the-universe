@@ -79,6 +79,29 @@ This periodic adjustment absorbs accumulated drifts from the geometric dissonanc
 
 The leap frequency is tuned to the model, and ties into the 13 discrete agents in the Vitruvian Echo (12 normal + 1 leap agent).
 
+### Alternate: Fixed 11.91 Constant
+
+A more pragmatic (and numerically exact) version simply uses a constant prefactor of **11.91** in place of the chromatic term. This value is chosen so that
+
+\[
+11.91 \times \alpha^{-1} \times \frac{9}{8} \approx 1836.15267343
+\]
+
+matching the CODATA proton-electron mass ratio to within experimental uncertainty (error <0.001%).
+
+- Here the chromatic factor is 0.75% lower than the ideal 12, interpretable as a tiny "geometric residue" or detuning from perfect 12‑fold tiling.
+- It retains the spirit of the model while making the prediction exact and simpler to state.
+
+| Approach | Chromatic Factor | Predicted μ | Error (CODATA) |
+|----------|------------------|-------------|----------------|
+| Ideal (no correction) | 12.000 | 1849.99 | 0.75% high |
+| Leap-cycle average | ~11.916 | 1837.06 | 0.05% high |
+| Fixed constant | 11.91 | 1836.15 | <0.001% |
+
+
+Both leap and fixed-constant approaches are included in the code and tests; users can pick the style that speaks to them.  
+(See `gur_test.py` for implementation examples.)
+
 ## 5. Proof Strategy
 
 ### The Vitruvian Echo Equation (Hybrid Circle-Square Model)

@@ -31,24 +31,47 @@ t_max = 20 # Years [cite: 8]
 t_steps = np.linspace(0, t_max, 600) # [cite: 11]
 
 # --- 5. Visualization ---
-plt.style.use('dark_background')
-fig, ax = plt.subplots(figsize=(12, 6))
-fig.patch.set_facecolor('#07090d')
-ax.set_facecolor((1, 1, 1, 0.03))
+def plot_regime_simulation():
+    plt.style.use('dark_background')
+    fig, ax = plt.subplots(figsize=(12, 6))
+    fig.patch.set_facecolor('#07090d')
+    ax.set_facecolor((1, 1, 1, 0.03))
 
-for key, p in REGIMES.items():
-    deltas = [calculate_delta(t, d0, p) for t in t_steps]
-    ax.plot(t_steps, deltas, label=p['label'], color=p['color'], linewidth=2)
+    for key, p in REGIMES.items():
+        deltas = [calculate_delta(t, d0, p) for t in t_steps]
+        ax.plot(t_steps, deltas, label=p['label'], color=p['color'], linewidth=2)
 
-# Styling to match your "Aesthetic Outline" [cite: 20, 21]
-ax.set_title(f"ENSO Chaos Simulator (Ψ = {PSI:.7f})", color="#e8c090", fontsize=16, pad=20)
-ax.set_xlabel("Years", color="#445", family='monospace')
-ax.set_ylabel("δ(t) Perturbation", color="#445", family='monospace')
-ax.grid(color=(1, 1, 1, 0.05), linestyle='--')
-ax.legend(frameon=False)
+    # Styling to match your "Aesthetic Outline" [cite: 20, 21]
+    ax.set_title(f"ENSO Chaos Simulator (Ψ = {PSI:.7f})", color="#e8c090", fontsize=16, pad=20)
+    ax.set_xlabel("Years", color="#445", family='monospace')
+    ax.set_ylabel("δ(t) Perturbation", color="#445", family='monospace')
+    ax.grid(color=(1, 1, 1, 0.05), linestyle='--')
+    ax.legend(frameon=False)
 
-plt.tight_layout()
-plt.show()
+    plt.tight_layout()
+    plt.show()
+
+# Call the regime plot
+plot_regime_simulation()
+
+def plot_variance_data():
+    """Plot the variance data from enso_variance_data.txt"""
+    years = []
+    variances = []
+    with open('enso_variance_data.txt', 'r') as f:
+        next(f)  # skip header
+        for line in f:
+            y, v = line.strip().split(',')
+            years.append(int(y))
+            variances.append(float(v))
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(years, variances, 'o-', color="#ff4d2e", linewidth=2, markersize=6)
+    plt.title("ENSO Variance Data Over Time", color="#e8c090")
+    plt.xlabel("Year")
+    plt.ylabel("Variance Delta")
+    plt.grid(True, alpha=0.3)
+    plt.show()
 
 def run_dual_sim():
     t = np.linspace(0, 20, 1000)
@@ -80,4 +103,11 @@ def run_dual_sim():
     plt.show()
 
 if __name__ == "__main__":
+    # Run the regime simulation
+    plot_regime_simulation()
+    
+    # Then run dual sim
     run_dual_sim()
+    
+    # Then plot variance data
+    plot_variance_data()

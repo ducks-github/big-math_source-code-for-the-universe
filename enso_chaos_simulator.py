@@ -89,8 +89,11 @@ def run_dual_sim():
     
     # The perturbation grows and "warps" the circle
     perturbation = psi * np.exp(lambda_val * t + (epsilon * np.sin(t)))
-    enso_x = (1 + perturbation) * np.cos(t)
-    enso_y = (1 + perturbation) * np.sin(t)
+    # Add chaotic noise to make it truly chaotic
+    noise_level = 0.1  # Adjust for more/less chaos
+    chaotic_noise = noise_level * np.random.randn(len(t)) * perturbation
+    enso_x = (1 + perturbation + chaotic_noise) * np.cos(t)
+    enso_y = (1 + perturbation + chaotic_noise) * np.sin(t)
     
     # --- Visualizing the Nature of the Data ---
     plt.figure(figsize=(10, 10))

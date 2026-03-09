@@ -240,6 +240,8 @@ version 3 (GPLv3). See the `LICENSE` file for the full text.
 - **`enso_chaos_simulator.py`**: A climate perturbation model demonstrating how GUR constants (Φ, Ψ) can be applied to simulate ENSO (El Niño-Southern Oscillation) dynamics. Explores regime-dependent chaos in oceanic-atmospheric systems using exponential growth with seasonal modulation. Includes a dual simulation comparing Vitruvian symmetry (ideal circle) vs. ENSO chaos (perturbed circle with added stochastic noise), and plots variance data from `enso_variance_data.txt`.
 - **`localized_variance.py`**: Computes localized variance δ(t) using the universal PSI seed, measuring departures from the Vitruvian ideal in "Strong ENSO / Milky Way" regime parameters.
 
+> "The Vitruvian limit is no longer a destination, but a departure point. We track the variance (δ) to see how the source code outgrows the symmetry."
+
 ---
 
 This README is intended both as a guide for collaborators and as a “proof‑document” that outlines the logic behind the computational verification.  It is **not** a peer‑reviewed demonstration of truth; it should be read as a description of the model and its present numerical status.

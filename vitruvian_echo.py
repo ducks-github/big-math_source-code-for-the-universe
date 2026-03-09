@@ -15,6 +15,7 @@ T          = 1.618                         # temperature — golden chaos
 KAPPA      = 0.23                          # coupling — how strongly agents touch
 N_AGENTS   = 13                            # number of "neurons" or "souls"
 STEPS      = 300                           # how many breaths of creation to watch
+LEAP_INTERVAL = 12                         # leap every 12 steps, like leap years
 GRID_SIZE  = 64                            # spatial resolution (square tries to contain circle)
 
 # ─── The mysterious tuning constant ───
@@ -67,6 +68,12 @@ for t in range(STEPS):
 
     # Discrete neural gift — sum ω_i A_i projected onto field
     neural_injection = np.mean(A * omega) * psi * 0.014
+
+    # Leap correction: every LEAP_INTERVAL steps, extra boost from 13th agent
+    if t % LEAP_INTERVAL == 0:
+        leap_boost = A[12] * omega[12] * psi * 0.02  # extra injection from leap agent
+        neural_injection += leap_boost
+        print(f"Leap at t={t}: 13th agent activated")
 
     # Tensor-like interaction — very crude global modulation
     interaction = KAPPA * np.mean(A.conj() @ C @ A).real * psi * 0.008

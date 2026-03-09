@@ -235,6 +235,10 @@ The mapping of \(12 \cdot \alpha^{18}\) suggests that gravity is not a "force" i
 This project is released under the terms of the GNU General Public License
 version 3 (GPLv3). See the `LICENSE` file for the full text.
 
+## Additional Explorations
+
+- **`enso_chaos_simulator.py`**: A climate perturbation model demonstrating how GUR constants (Φ, Ψ) can be applied to simulate ENSO (El Niño-Southern Oscillation) dynamics. Explores regime-dependent chaos in oceanic-atmospheric systems using exponential growth with seasonal modulation.
+
 ---
 
 This README is intended both as a guide for collaborators and as a “proof‑document” that outlines the logic behind the computational verification.  It is **not** a peer‑reviewed demonstration of truth; it should be read as a description of the model and its present numerical status.

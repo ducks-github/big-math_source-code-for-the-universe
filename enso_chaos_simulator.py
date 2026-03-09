@@ -49,3 +49,35 @@ ax.legend(frameon=False)
 
 plt.tight_layout()
 plt.show()
+
+def run_dual_sim():
+    t = np.linspace(0, 20, 1000)
+    
+    # 1. Vitruvian Data (The Ideal Circle)
+    # Proportions are fixed; motion is a perfect sine wave
+    vitruvian_x = np.cos(t)
+    vitruvian_y = np.sin(t)
+    
+    # 2. ENSO Chaos Data (The Brutal Variation)
+    # Using your Lambda (0.18) and the PSI constant from your repo
+    psi = 0.00754  # Simplified PSI from your formula
+    lambda_val = 0.18
+    epsilon = 2.4
+    
+    # The perturbation grows and "warps" the circle
+    perturbation = psi * np.exp(lambda_val * t + (epsilon * np.sin(t)))
+    enso_x = (1 + perturbation) * np.cos(t)
+    enso_y = (1 + perturbation) * np.sin(t)
+    
+    # --- Visualizing the Nature of the Data ---
+    plt.figure(figsize=(10, 10))
+    plt.plot(vitruvian_x, vitruvian_y, 'w--', alpha=0.3, label="Vitruvian Ideal (The Outline)")
+    plt.plot(enso_x, enso_y, color="#ff4d2e", label="ENSO Chaos (The Detail)")
+    
+    plt.title("Vitruvian Symmetry vs. Climate Chaos", color="#e8c090")
+    plt.gca().set_aspect('equal')
+    plt.legend()
+    plt.show()
+
+if __name__ == "__main__":
+    run_dual_sim()
